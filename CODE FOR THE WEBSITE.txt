@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Café Amistad – Coffee of Friendship</title>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #FAF3E0;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+    header {
+      background-color: #3E2723;
+      color: white;
+      padding: 15px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    header img {
+      width: 60px;
+    }
+    nav {
+      display: flex;
+      gap: 15px;
+    }
+    nav a {
+      color: #BCAAA4;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #D7CCC8;
+    }
+    .hero {
+      background: url('background.png') no-repeat center center/cover;
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+    }
+    .hero h1 {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 4em;
+      margin: 0;
+    }
+    .hero h2 {
+      font-size: 1.5em;
+      font-style: italic;
+      margin: 10px 0;
+    }
+    section {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 40px 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+      margin: 40px auto;
+      max-width: 1000px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 2em;
+    }
+    .menu-container {
+      display: flex;
+      overflow-x: auto;
+      gap: 15px;
+      padding: 10px 0;
+    }
+    .menu-item {
+      background-color: #E0C097;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      min-width: 220px;
+      transition: transform 0.3s;
+    }
+    .menu-item:hover {
+      transform: scale(1.05);
+    }
+    .menu-item img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+    .menu-item h3 {
+      text-align: center;
+      margin: 10px 0;
+    }
+    .advocacies, .community {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .advocacies-item, .community-item {
+      display: flex;
+      align-items: center;
+      background-color: #E0C097;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .advocacies-item img, .community-item img {
+      width: 120px;
+      height: 120px;
+      margin-right: 15px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    .team-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+    }
+    .team-member {
+      flex: 0 1 calc(30% - 20px);
+      text-align: center;
+      background-color: #D7CCC8;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+    }
+    .team-member:hover {
+      transform: scale(1.05);
+    }
+    .team-member img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+      border: 2px solid #6D4C41;
+    }
+    .review {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #BCAAA4;
+      padding: 10px 0;
+    }
+    .review:last-child {
+      border-bottom: none;
+    }
+    .review span {
+      color: #FFD700;
+    }
+    .booking-form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-width: 500px;
+      margin: auto;
+    }
+    .booking-form input, .booking-form textarea {
+      padding: 10px;
+      border: 1px solid #BCAAA4;
+      border-radius: 5px;
+    }
+    .booking-button {
+      background-color: #8D6E63;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .booking-button:hover {
+      background-color: #A1887F;
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: #4E3B31;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="logo.png" alt="Café Amistad Logo">
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#menu">Menu</a>
+    <a href="#advocacies">Advocacies</a>
+    <a href="#community">Community</a>
+    <a href="#team">Team</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#booking">Booking</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<!-- Hero Section -->
+<div class="hero" id="home">
+  <h1>Café Amistad</h1>
+  <h2>Coffee of Friendship</h2>
+  <p>Bringing friends closer together, one cup at a time.</p>
+</div>
+
+<!-- Menu -->
+<section id="menu">
+  <h2>Menu</h2>
+  <div class="menu-container">
+    <div class="menu-item">
+      <img src="kapeng barako.png" alt="Kapeng Barako Brew">
+      <h3>Kapeng Barako Brew</h3>
+      <p>La Union best coffee, strong and full-bodied, perfect for black coffee lovers.</p>
+      <strong><p style="display: flex; justify-content: center;"> ₱90 (Hot) | ₱110 (Iced) </p></strong>
+      
+    </div>
+    <div class="menu-item">
+      <img src="ube.png" alt="Ube Latte">
+      <h3>Ube Latte</h3>
+      <p>Espresso blended with ube halaya and milk for a uniquely Filipino sweet latte.</p>
+      <strong><p style="display: flex; justify-content: center;"> ₱150 (Hot) | ₱170 (Iced) </p></strong>
+
+    </div>
+    <div class="menu-item">
+      <img src="Macapuno Cappuccino.png" alt="Macapuno Cappuccino">
+      <h3>Macapuno Cappuccino</h3>
+      <p>Classic cappuccino topped with creamy macapuno for a tropical twist.</p>
+      <strong><p style="display: flex; justify-content: center;">₱140 (Iced)</p></strong>
+      
+    
+    </div>
+    <div class="menu-item">
+      <img src="buko pandan.png" alt="Buko Pandan Frappe">
+      <h3>Buko Pandan Frappe</h3>
+      <p>A creamy frappe with buko, pandan flavor, and nata de coco bits.</p>
+      <strong><p style="display: flex; justify-content: center;">₱170</p></strong>
+      
+    
+    </div>
+    <div class="menu-item">
+      <img src="https://2.bp.blogspot.com/-R_VF_aav-bs/VymJU2h0A0I/AAAAAAAABR4/fbhoq8_pOcUZayvZFfwRQhjnRTli7bVLACLcB/s1600/ensaymada.jpg" alt="Ensaymada">
+      <h3>Ensaymada (Cheese)</h3>
+      <p>Soft, buttery bread topped with cheese or ube for a perfect coffee partner.</p>
+      <strong><p style="display: flex; justify-content: center;">₱70</p></strong>
+    
+    </div>
+    <div class="menu-item">
+      <img src="Ube Pandesal w Cream Cheese.png" alt="Ube Pandesal w/ Cream Cheese">
+      <h3>Ube Pandesal w/ Cream Cheese</h3>
+      <p>Fluffy pandesal filled with ube and cream cheese center.</p>
+      <strong><p style="display: flex; justify-content: center;">₱65</p></strong>
+
+    </div>
+    <div class="menu-item">
+      <img src="inasal.png" alt="Chicken Inasal Rice Bowl">
+      <h3>Chicken Inasal Rice Bowl</h3>
+      <p>Grilled chicken inasal served with garlic rice.</p>
+      <strong><p style="display: flex; justify-content: center;">₱190</p></strong>
+
+      </div>
+      <div class="menu-item">
+      <img src="Pork Adobo Rice Bowl.png" alt="Pork Adobo Rice Bowl">
+      <h3>Pork Adobo Rice Bowl</h3>
+      <p>Tender adobo served over steamed rice, a true Filipino classic.</p>
+      <strong><p style="display: flex; justify-content: center;">₱160</p></strong>
+
+      </div>
+      <div class="menu-item">
+      <img src="leche plan.png" alt="Turon">
+      <h3>Leche Flan Latte Pudding</h3>
+      <p>Silky leche flan served with a hint of coffee caramel sauce.</p>
+      <strong><p style="display: flex; justify-content: center;">₱120</p></strong>
+
+</div>
+</section>
+
+<!-- Advocacies -->
+<section id="advocacies">
+  <h2>Advocacies</h2>
+  <div class="advocacies">
+    <div class="advocacies-item">
+      <img src="friendship and community.png" alt="Friendship & Community">
+      <div>
+        <h3>Friendship & Community</h3>
+        <p>Café Amistad is a place where people come together—friends, family, coworkers, and strangers who can become friends over a cup of coffee.</p>    
+      </div>
+    </div>
+    <div class="advocacies-item">
+      <img src="Promoting Filipino Flavors.png" alt="Promoting Filipino Flavors">
+      <div>
+        <h3>Promoting Filipino Flavors</h3>
+        <p>We take pride in showcasing local flavors like barako, ube, pandan, calamansi, and tablea.</p>
+      </div>
+    </div>
+    <div class="advocacies-item">
+      <img src="local farmers.png" alt="Support for Local Farmers & Suppliers">
+      <div>
+        <h3>Support for Local Farmers & Suppliers</h3>
+        <p>We aim to source coffee beans, cacao, and produce from local farmers.</p>
+        </div>
+    </div>
+    <div class="advocacies-item">
+      <img src="Sustainability & Care for the Environment.png" alt="Sustainability & Care for the Environment">
+      <div>
+        <h3>Sustainability & Care for the Environment</h3>
+        <p>We advocate for eco-friendly practices like reducing single-use plastics, encouraging reusable cups, and sourcing ethically.</p>
+      
+    </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+<!-- Community -->
+<section id="community">
+  <h2>Community Initiatives</h2>
+  <div class="community">
+    <div class="community-item">
+      <img src="Friendship Table.png" alt="Friendship Table">
+      <div>
+        <h4>Friendship Table</h4>
+        <p>A designated table in the café where solo customers can sit if they’re open to meeting new friends. Encourages connections in a safe, welcoming way.</p>
+      </div>
+    </div>
+    <div class="community-item">
+      <img src="for a cause.png" alt="Brew for a Cause">
+      <div>
+        <h4>Brew for a Cause</h4>
+        <p>Every month, a portion of sales from a featured drink (e.g., Ube Latte for Love) goes to local charities, school supplies, or community projects.</p>
+      </div>
+    </div>
+    <div class="community-item">
+      <img src="Coffee with Kuya & Ate.png" alt="Coffee with Kuya & Ate">
+      <div>
+        <h4>Coffee with Kuya & Ate</h4>
+        <p>A mentorship or “study buddy” program where students can enjoy discounted drinks while volunteers (young pros, alumni, etc.) help them with schoolwork inside the café.</p>
+      </div>
+    </div>
+    <div class="community-item">
+      <img src="Amistad Art Wall.png" alt="Amistad Art Wall">
+      <div>
+        <h4>Amistad Art Wall</h4>
+        <p>Showcase artworks, poems, or photography from local artists and students. Rotates monthly to give exposure to more talents.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Team -->
+<section id="team">
+  <h2>Our Team</h2>
+  <div class="team-section">
+    <div class="team-member">
+      <img src="owner.png" alt="Owner">
+      <h3>Owner: Dexter Cabradilla Mina</h3>
+    </div>
+    <div class="team-member">
+      <img src="aed.png" alt="Barista">
+      <h3>Barista: Aedriellei Posadas Castro</h3>
+    </div>
+    <div class="team-member">
+      <img src="alfred.png" alt="Barista">
+      <h3>Barista: Alfred Gaebryel Laudencia</h3>
+    </div>
+    <div class="team-member">
+      <img src="ashwin.png" alt="Barista">
+      <h3>Barista: Ashwin Drei</h3>
+    </div>
+    <div class="team-member">
+      <img src="eze.png" alt="Barista">
+      <h3>Barista: Ezekiel Gacayan</h3>
+    </div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section id="reviews">
+  <h2>Customer Reviews</h2>
+  <div class="review">
+    <p>“A café that truly lives up to its name.” Café Amistad is all about friendship and connection—you can feel it in the atmosphere. I sat at their “Friendship Table” and actually ended up chatting with new friends over coffee. Such a unique and heartwarming idea!” - Sheikha</p>
+    <span>⭐️⭐️⭐️⭐️⭐️</span>
+  </div>
+  <div class="review">
+    <p>“A hidden gem! Café Amistad has the perfect balance of cozy ambiance and Filipino flavors. I tried the Ube Latte and it was so unique—sweet, creamy, and comforting. The staff were very friendly, making me feel right at home. Definitely my new go-to spot for coffee and chill.” - Lian</p>
+    <span>⭐️⭐️⭐️⭐️</span>
+  </div>
+</section>
+
+<!-- Booking -->
+<section id="booking">
+  <h2>Book a Table!</h2>
+  <div class="booking-form">
+    <input type="text" placeholder="Your Name">
+    <input type="text" placeholder="Your Email">
+    <input type="text" placeholder="Date and Time">
+    <input type="number" placeholder="Guests">
+    <button class="booking-button">Book Now</button>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact">
+  <h2>Contact Us</h2>
+  <p>Email: cafeamistad@gmail.com</p>
+  <p>Socials: @amis.tadcoffee</p>
+  <p>Phone: 0939-603-8482</p>
+  <p>📌 River St., San Fernando City, La Union</p>
+</section>
+
+<footer>
+  <p>&copy; 2025 Café Amistad – Coffee of Friendship. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
